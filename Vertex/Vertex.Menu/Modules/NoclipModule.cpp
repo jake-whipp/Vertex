@@ -8,7 +8,10 @@ namespace Vertex::Menu::Modules
 		return true;
 		}();
 
-	NoclipModule::NoclipModule() : RegisteredModule("Noclip")
+	NoclipModule::NoclipModule() : RegisteredModule(
+		"Noclip", 
+		"Lets the user move through objects.", 
+		Category::Cheat)
 	{
 		// Create hook via MH
 	}

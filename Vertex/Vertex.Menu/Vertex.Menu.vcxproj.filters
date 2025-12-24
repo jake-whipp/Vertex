@@ -21,7 +21,7 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Modules\ModuleManager.h">
+    <ClInclude Include="ModuleManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Modules\IModule.h">
@@ -33,6 +33,9 @@
     <ClInclude Include="Modules\RegisteredModule.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ModuleView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -41,7 +44,7 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Modules\ModuleManager.cpp">
+    <ClCompile Include="ModuleManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Modules\NoclipModule.cpp">

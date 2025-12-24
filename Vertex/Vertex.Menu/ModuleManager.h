@@ -3,7 +3,8 @@
 #include <memory>
 #include <unordered_map>
 #include <string>
-#include "IModule.h"
+#include "Modules/IModule.h"
+#include "ModuleView.h"
 
 namespace Vertex::Menu 
 {
@@ -19,6 +20,8 @@ namespace Vertex::Menu
 		void registerModule(std::unique_ptr<IModule> module);
 
 		void toggleModule(const std::string& name);
+
+		std::vector<ModuleView> GetAllModules();
 
 	private:
 		ModuleManager();

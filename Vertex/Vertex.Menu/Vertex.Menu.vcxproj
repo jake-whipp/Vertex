@@ -165,14 +165,15 @@
   <ItemGroup>
     <ClInclude Include="framework.h" />
     <ClInclude Include="Modules\IModule.h" />
-    <ClInclude Include="Modules\ModuleManager.h" />
+    <ClInclude Include="ModuleManager.h" />
     <ClInclude Include="Modules\NoclipModule.h" />
+    <ClInclude Include="ModuleView.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Modules\RegisteredModule.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="Modules\ModuleManager.cpp" />
+    <ClCompile Include="ModuleManager.cpp" />
     <ClCompile Include="Modules\NoclipModule.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

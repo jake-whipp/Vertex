@@ -16,7 +16,8 @@ namespace Vertex::Menu
 		}
 
 	protected:
-		RegisteredModule(std::string name) : IModule(std::move(name)) {}
+		RegisteredModule(std::string name, std::string desc, Category cat) 
+			: IModule(std::move(name), std::move(desc), cat) {}
 
 		virtual ~RegisteredModule() = default;
 	};
