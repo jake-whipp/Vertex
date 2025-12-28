@@ -5,11 +5,7 @@ namespace Vertex::Menu
 {
 	ModuleManager::ModuleManager()
 	{
-		if (MH_Initialize() != MH_OK)
-		{
-			// TODO:	Log error
-			//			Throw exception
-		}
+
 	}
 
 	ModuleManager::~ModuleManager()
@@ -25,9 +21,6 @@ namespace Vertex::Menu
 
 		// Clear the map
 		m_modules.clear();
-
-		// Shut down MinHook
-		MH_Uninitialize();
 	}
 
 	void ModuleManager::registerModule(std::unique_ptr<IModule> module)

@@ -12,13 +12,14 @@ namespace Vertex::Menu
 		Utility,
 		Performance,
 		Bugfix,
-		Online
+		Online,
+		Miscellaneous
 	};
 
 	struct ModuleView
 	{
 		std::string name;
 		std::string description;
-		Category category;
+		Category category = Category::Miscellaneous;
 	};
 }

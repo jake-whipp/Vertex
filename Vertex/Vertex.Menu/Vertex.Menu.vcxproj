@@ -164,15 +164,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="framework.h" />
+    <ClInclude Include="HookService.h" />
     <ClInclude Include="Modules\IModule.h" />
     <ClInclude Include="ModuleManager.h" />
     <ClInclude Include="Modules\NoclipModule.h" />
     <ClInclude Include="ModuleView.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Modules\RegisteredModule.h" />
+    <ClInclude Include="UIManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="HookService.cpp" />
     <ClCompile Include="ModuleManager.cpp" />
     <ClCompile Include="Modules\NoclipModule.cpp" />
     <ClCompile Include="pch.cpp">
@@ -181,6 +184,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="UIManager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
