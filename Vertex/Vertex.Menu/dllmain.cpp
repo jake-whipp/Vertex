@@ -1,7 +1,10 @@
 // dllmain.cpp : The entry point for the Vertex DLL application.
 #include "pch.h"
+#include "Vertex.h"
 
 DWORD WINAPI MainThread(LPVOID lpParam) {
+    Vertex::Menu::initialise();
+
     return 0;
 }
 

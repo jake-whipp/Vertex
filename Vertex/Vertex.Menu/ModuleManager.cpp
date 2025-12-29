@@ -5,22 +5,7 @@ namespace Vertex::Menu
 {
 	ModuleManager::ModuleManager()
 	{
-
-	}
-
-	ModuleManager::~ModuleManager()
-	{
-		// Disable all active modules to safely restore game instructions
-		for (const auto& [name, pModule] : m_modules)
-		{
-			if (pModule->isEnabled())
-			{
-				pModule->onDisable();
-			}
-		}
-
-		// Clear the map
-		m_modules.clear();
+		// TODO: load config ?
 	}
 
 	void ModuleManager::registerModule(std::unique_ptr<IModule> module)

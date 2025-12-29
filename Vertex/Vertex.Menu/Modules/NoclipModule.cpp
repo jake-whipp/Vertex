@@ -13,7 +13,7 @@ namespace Vertex::Menu::Modules
 		"Lets the user move through objects.", 
 		Category::Cheat)
 	{
-		// Create hook via MH
+		// Create hook via HookService
 	}
 
 	NoclipModule::~NoclipModule()
@@ -29,11 +29,11 @@ namespace Vertex::Menu::Modules
 
 	void NoclipModule::onEnable()
 	{
-		// Enable hook via MH
+		// Enable hook via HookService
 	}
 
 	void NoclipModule::onDisable()
 	{
-		// Disable hook via MH
+		// Disable hook via HookService
 	}
 }

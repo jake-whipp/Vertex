@@ -25,7 +25,6 @@ namespace Vertex::Menu
 
 	private:
 		ModuleManager();
-		~ModuleManager();
 		
 		std::unordered_map<std::string, std::unique_ptr<IModule>> m_modules;
 	};
