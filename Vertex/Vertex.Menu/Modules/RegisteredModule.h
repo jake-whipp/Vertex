@@ -2,7 +2,7 @@
 #include "IModule.h"
 #include "ModuleManager.h"
 
-namespace Vertex::Menu
+namespace Vertex::Menu::Modules
 {
 	template <typename T>
 	class RegisteredModule : public IModule

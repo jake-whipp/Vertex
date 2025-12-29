@@ -39,8 +39,6 @@ namespace Vertex::Menu
 
 		void draw();
 
-		std::vector<ModuleView> m_moduleInformation;
-
 		bool m_menuShown;
 		UIManagerState m_state;
 	};

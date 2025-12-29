@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "PlatformerModule.h"
 
-namespace Vertex::Menu
+namespace Vertex::Menu::Modules
 {
 	static bool _register = []() {
 		PlatformerModule::registerSelf();
@@ -11,7 +11,7 @@ namespace Vertex::Menu
 	PlatformerModule::PlatformerModule() : RegisteredModule(
 		"Platformer Mode",
 		"Forces the gamemode to become a platformer level.",
-		Category::Cheat)
+		Category::Miscellaneous)
 	{
 		// Create hook via HookService
 	}

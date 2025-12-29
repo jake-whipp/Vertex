@@ -2,7 +2,7 @@
 #include "RegisteredModule.h"
 #include "ModuleManager.h"
 
-namespace Vertex::Menu
+namespace Vertex::Menu::Modules
 {
 	class PlatformerModule : public RegisteredModule<PlatformerModule>
 	{

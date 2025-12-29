@@ -9,7 +9,7 @@ namespace Vertex::Menu
 	void initialise()
 	{
 		HookService::getInstance();
-		ModuleManager::getInstance();
+		ModuleManager::getInstance().initialise();
 		UIManager::getInstance().initialise();
 	}
 

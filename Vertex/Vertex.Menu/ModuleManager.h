@@ -8,6 +8,14 @@
 
 namespace Vertex::Menu 
 {
+	enum class ModuleManagerState
+	{
+		Uninitialised,
+		BuildingModules,
+		Complete,
+		Failed
+	};
+
 	class ModuleManager
 	{
 	public:
@@ -17,15 +25,21 @@ namespace Vertex::Menu
 			return instance;
 		}
 
-		void registerModule(std::unique_ptr<IModule> module);
+		void initialise();
+
+		void registerModule(std::unique_ptr<Modules::IModule> module);
 
 		void toggleModule(const std::string& name);
 
-		std::vector<ModuleView> GetAllModules();
+		const std::vector<ModuleView>& getAllModules() const;
 
 	private:
 		ModuleManager();
 		
-		std::unordered_map<std::string, std::unique_ptr<IModule>> m_modules;
+		std::unordered_map<std::string, std::unique_ptr<Modules::IModule>> m_modules;
+
+		std::vector<ModuleView> m_allModuleInfo;
+
+		ModuleManagerState m_state;
 	};
 }

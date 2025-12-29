@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "UIManager.h"
 #include "ModuleManager.h"
+#include "UI/ModuleWidget.h"
 
 extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
@@ -63,8 +64,6 @@ namespace Vertex::Menu
 		// Toggle the overlay using the delete key (TODO: magic again!!!!)
 		if (uMsg == WM_KEYDOWN && wParam == VK_DELETE) {
 			// Refresh module info
-			uiManager.m_moduleInformation = ModuleManager::getInstance().GetAllModules();
-
 			uiManager.m_menuShown = !uiManager.m_menuShown;
 			return false;
 		}
@@ -105,7 +104,7 @@ namespace Vertex::Menu
 			ImFontConfig cfg;
 			cfg.RasterizerDensity = dpi_scale;
 			cfg.SizePixels = std::floor(16.0f * dpi_scale);
-			
+
 			// TODO: use project resources
 			io.Fonts->AddFontFromFileTTF("C:\\Windows\\Fonts\\segoeui.ttf", cfg.SizePixels, &cfg);
 
@@ -140,21 +139,13 @@ namespace Vertex::Menu
 		// Demo UI (for now..............)
 		ImGui::ShowDemoWindow();
 
-		// Extra UI Code (for now also...........)
-		ImGui::SetNextWindowSize(ImVec2(400, 400));
-		ImGui::Begin("GD Menu", NULL, ImGuiWindowFlags_None);
-
-		for (auto& module : m_moduleInformation)
+		// Create widgets for each module category
+		for (Category category : allCategories)
 		{
-			if (ImGui::Checkbox(module.name.c_str(), &module.enabled))
-			{
-				ModuleManager::getInstance().toggleModule(module.name);
-			}
-
-			ImGui::SetItemTooltip(module.description.c_str(), module.name.c_str());
+			std::unique_ptr<UI::IWidget> moduleWidget = UI::createModuleWidget(category);
+			moduleWidget->setPos(425.0f * static_cast<int>(category), 400);
+			moduleWidget->draw();
 		}
-
-		ImGui::End();
 
 		ImGui::Render();
 
@@ -162,4 +153,3 @@ namespace Vertex::Menu
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 	}
 }
-	

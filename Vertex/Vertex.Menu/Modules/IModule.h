@@ -2,7 +2,7 @@
 #include <string>
 #include "UI/ModuleView.h"
 
-namespace Vertex::Menu
+namespace Vertex::Menu::Modules
 {
 	class IModule
 	{
