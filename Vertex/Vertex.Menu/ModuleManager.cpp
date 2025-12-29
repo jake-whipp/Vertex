@@ -9,16 +9,9 @@ namespace Vertex::Menu
 		
 	}
 
-	void ModuleManager::initialise()
+	void ModuleManager::refreshModuleInfo()
 	{
-		if (m_state != ModuleManagerState::Uninitialised)
-		{
-			return;
-		}
-
-		// To avoid the Static Initialisation Order Fiasco, build the m_modules vector here, 
-		// instead of in the constructor.
-		m_state = ModuleManagerState::BuildingModules;
+		m_allModuleInfo.clear();
 
 		for (const auto& [name, pModule] : m_modules)
 		{
@@ -30,6 +23,19 @@ namespace Vertex::Menu
 
 			m_allModuleInfo.emplace_back(view);
 		}
+	}
+
+	void ModuleManager::initialise()
+	{
+		if (m_state != ModuleManagerState::Uninitialised)
+		{
+			return;
+		}
+
+		// To avoid the Static Initialisation Order Fiasco, build the m_modules vector here, 
+		// instead of in the constructor.
+		m_state = ModuleManagerState::BuildingModules;
+		refreshModuleInfo();
 
 		// Check if this somehow failed
 		if (m_modules.size() < 1)
@@ -56,6 +62,8 @@ namespace Vertex::Menu
 		{
 			m_modules[name]->toggle();
 		}
+
+		refreshModuleInfo();
 	}
 
 	const std::vector<ModuleView>& ModuleManager::getAllModules() const
