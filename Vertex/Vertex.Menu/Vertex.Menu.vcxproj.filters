@@ -33,7 +33,7 @@
     <ClInclude Include="Modules\RegisteredModule.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ModuleView.h">
+    <ClInclude Include="UI\ModuleView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="UIManager.h">
@@ -43,6 +43,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Vertex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\PlatformerModule.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -66,6 +69,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Vertex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\PlatformerModule.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

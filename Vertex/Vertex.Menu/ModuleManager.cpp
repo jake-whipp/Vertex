@@ -32,6 +32,7 @@ namespace Vertex::Menu
 			view.name = name;
 			view.description = pModule->getDescription();
 			view.category = pModule->getCategory();
+			view.enabled = pModule->isEnabled();
 
 			allModuleInfo.emplace_back(view);
 		}

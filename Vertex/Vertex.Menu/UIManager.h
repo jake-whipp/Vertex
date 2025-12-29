@@ -1,5 +1,6 @@
 #pragma once
 #include "HookService.h"
+#include "UI/ModuleView.h"
 
 namespace Vertex::Menu
 {
@@ -35,6 +36,10 @@ namespace Vertex::Menu
 		static BOOL WINAPI wglSwapBuffersHook(HDC hdc);
 		Hooks::wglSwapBuffers_t m_pSwapBuffersHookPoint;
 		Hooks::wglSwapBuffers_t m_pOriginalSwapBuffers;
+
+		void draw();
+
+		std::vector<ModuleView> m_moduleInformation;
 
 		bool m_menuShown;
 		UIManagerState m_state;

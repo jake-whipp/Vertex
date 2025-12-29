@@ -168,7 +168,8 @@
     <ClInclude Include="Modules\IModule.h" />
     <ClInclude Include="ModuleManager.h" />
     <ClInclude Include="Modules\NoclipModule.h" />
-    <ClInclude Include="ModuleView.h" />
+    <ClInclude Include="Modules\PlatformerModule.h" />
+    <ClInclude Include="UI\ModuleView.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Modules\RegisteredModule.h" />
     <ClInclude Include="UIManager.h" />
@@ -185,6 +186,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Modules\PlatformerModule.cpp" />
     <ClCompile Include="UIManager.cpp" />
     <ClCompile Include="Vertex.cpp" />
   </ItemGroup>

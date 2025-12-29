@@ -4,7 +4,7 @@
 #include <unordered_map>
 #include <string>
 #include "Modules/IModule.h"
-#include "ModuleView.h"
+#include "UI/ModuleView.h"
 
 namespace Vertex::Menu 
 {

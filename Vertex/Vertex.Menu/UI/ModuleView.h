@@ -21,5 +21,6 @@ namespace Vertex::Menu
 		std::string name;
 		std::string description;
 		Category category = Category::Miscellaneous;
+		bool enabled = false;
 	};
 }
