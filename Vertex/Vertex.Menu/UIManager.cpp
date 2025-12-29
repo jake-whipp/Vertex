@@ -22,7 +22,12 @@ namespace Vertex::Menu
 
 	UIManager::~UIManager()
 	{
-
+		if ((m_state == UIManagerState::Complete || m_state == UIManagerState::BuildingImGui)
+			&& m_pSwapBuffersHookPoint != nullptr)
+		{
+			HookService& hookService = HookService::getInstance();
+			hookService.RemoveHook((LPVOID)m_pSwapBuffersHookPoint);
+		}
 	}
 
 	void UIManager::initialise()
@@ -143,7 +148,7 @@ namespace Vertex::Menu
 		for (Category category : allCategories)
 		{
 			std::unique_ptr<UI::IWidget> moduleWidget = UI::createModuleWidget(category);
-			moduleWidget->setPos(425.0f * static_cast<int>(category), 400);
+			moduleWidget->setPos(425.0f * static_cast<int>(category), 100);
 			moduleWidget->draw();
 		}
 

@@ -27,8 +27,8 @@ namespace Vertex::Menu::UI
 	template<Category category>
 	void ModuleWidget<category>::draw()
 	{
-		ImGui::SetNextWindowSize(m_size);
-		ImGui::SetNextWindowPos(m_pos);
+		ImGui::SetNextWindowSize(m_size, ImGuiCond_FirstUseEver);
+		ImGui::SetNextWindowPos(m_pos, ImGuiCond_FirstUseEver);
 
 		// Draw window
 		ImGui::Begin(m_title.c_str(), NULL, ImGuiWindowFlags_None);
