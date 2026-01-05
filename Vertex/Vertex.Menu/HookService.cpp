@@ -3,6 +3,12 @@
 
 namespace Vertex::Menu
 {
+	uintptr_t HookService::GetGDBase()
+	{
+		// NULL specifies no module (aka GD itself)
+		return m_pGeometryDashBase;
+	}
+
 	MH_STATUS HookService::CreateHook(LPVOID pTarget, LPVOID pDetour, LPVOID* ppOriginal)
 	{
 		MH_STATUS result = MH_CreateHook(pTarget, pDetour, ppOriginal);
@@ -41,6 +47,8 @@ namespace Vertex::Menu
 
 	HookService::HookService()
 	{
+		m_pGeometryDashBase = (uintptr_t)GetModuleHandleA(NULL);
+
 		// Init. MH
 		if (MH_Initialize() != MH_OK)
 		{

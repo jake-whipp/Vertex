@@ -4,6 +4,11 @@
 
 namespace Vertex::Menu
 {
+	namespace Hooks 
+	{
+		typedef BOOL(WINAPI* wglSwapBuffers_t)(HDC hdc);
+	}
+
 	enum class UIManagerState
 	{
 		Uninitialised,

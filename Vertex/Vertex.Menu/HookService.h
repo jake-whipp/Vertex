@@ -3,10 +3,6 @@
 
 namespace Vertex::Menu
 {
-	namespace Hooks {
-		typedef BOOL(WINAPI* wglSwapBuffers_t)(HDC hdc);
-	}
-
 	class HookService
 	{
 	public:
@@ -16,6 +12,7 @@ namespace Vertex::Menu
 			return instance;
 		}
 
+		uintptr_t GetGDBase();
 
 		// MH-related wrappers:
 
@@ -30,5 +27,7 @@ namespace Vertex::Menu
 		~HookService();
 
 		std::vector<LPVOID> m_activeHooks;
+
+		uintptr_t m_pGeometryDashBase;
 	};
 }
